@@ -49,3 +49,10 @@ The core is built around the [ESP32-WROOM-32](https://www.espressif.com/sites/de
 |  Serial RX |3| |
 |  IO pin |2| When used for capacitative sensing, refer to T2|
 |  Reserved |32| For future use|
+
+## Troubleshooting
+- If you try to upload code and getting this message ```A fatal error occurred: Timed out waiting for packet content``` or ```A fatal error occurred: Invalid head of packet (0xE0)```, change the transfer speed to 460800 pbs.
+- If you try to upload code and getting this message ```[7886] Failed to execute script esptool the selected serial port [7886] Failed to execute script esptool
+does not exist or your board is not connected```, your serial port is open by another application. Close the other application and try again.
+
+
