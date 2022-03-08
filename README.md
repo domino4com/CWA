@@ -43,8 +43,8 @@ The core is built around the [ESP32-WROOM-32](https://www.espressif.com/sites/de
 ### Other Pins
 | Function |  GPIO | Notes|
 |:-----------------------------|:----:|:--|
-|  I2C SDA |21| |
-|  I2C SCL |22| |
+|  I²C SDA |21| |
+|  I²C SCL |22| |
 |  Serial TX |1| |
 |  Serial RX |3| |
 |  IO pin |2| When used for capacitative sensing, refer to T2|
