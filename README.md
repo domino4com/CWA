@@ -1,3 +1,5 @@
+<img src="assets/CWS.svg" width=200 align="right">
+
 # CWS Core WiFi Standard
 This is the default core used in the Domino4 eco-system.
 
