@@ -57,4 +57,9 @@ The core is built around the [ESP32-WROOM-32](https://www.espressif.com/sites/de
 - If you try to upload code and getting this message ```[7886] Failed to execute script esptool the selected serial port [7886] Failed to execute script esptool
 does not exist or your board is not connected```, your serial port is open by another application. Close the other application and try again.
 
+# License: 
+<img src="assets/CC-BY-NC-SA.svg" width=200 align="right">
+Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International Public License
+
+[View License Deed](https://creativecommons.org/licenses/by-nc-sa/4.0/) | [View Legal Code](https://creativecommons.org/licenses/by-nc-sa/4.0/legalcode)
 
