@@ -36,11 +36,11 @@ The core is built around the [ESP32-WROOM-32](https://www.espressif.com/sites/de
 ### LEDs
 | Postion | Color | GPIO | On when|
 |:-----------------------------|:----:|:--:|:--:
-|  Top |Red| IO25 | High |
-|  Top |Blue| IO26 | High |
+|  Top |Red| IO25 | Low |
+|  Top |Blue| IO26 | Low |
 |  Middle |Yellow| IO19 | High |
-|  Bottom |Red| IO17 | High |
-|  Bottom |Green| IO18 | High |
+|  Bottom |Red| IO17 | Low |
+|  Bottom |Green| IO18 | Low |
 
 ### Other Pins
 | Function |  GPIO | Notes|
