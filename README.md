@@ -1,6 +1,6 @@
-<img src="assets/CWS.svg" width=200 align="right">
+<img src="assets/CWA.svg" width=200 align="right">
 
-# CWS Core WiFi Standard
+# CWA Core WiFi Standard
 This is the default core used in the Domino4 eco-system.
 
 ## Main ChipSet
