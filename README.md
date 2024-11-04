@@ -22,7 +22,8 @@ The core is built around the [ESP32-WROOM-32](https://www.espressif.com/sites/de
 - You can use the Mu Editor to upload the MicroPython Firmware.
 
 ## Pin Usage
-### Touch Buttons
+### Buttons 
+#### Touch Buttons - Only V1
 | Symbol | GPIO | T# |
 |:-----------------------------:|:----:|:--:|
 | :arrow_left:                  | IO13 | T4|
@@ -32,8 +33,14 @@ The core is built around the [ESP32-WROOM-32](https://www.espressif.com/sites/de
 | :white_check_mark:            | IO4  | T0|
 | :negative_squared_cross_mark: | IO14 | T6|
 | :robot:                       | IO33 | T8|
+#### Push Buttons - V2+
+| Symbol | GPIO | Function |
+|:-----------------------------:|:----:|:--:|
+| :arrow_forward:                 | IO0 | Program |
+| :arrows_counterclockwise:               | n/a | Reset |
 
 ### LEDs
+#### V1
 | Postion | Color | GPIO | On when|
 |:-----------------------------|:----:|:--:|:--:
 |  Top |Red| IO25 | Low |
@@ -42,15 +49,31 @@ The core is built around the [ESP32-WROOM-32](https://www.espressif.com/sites/de
 |  Bottom |Red| IO17 | Low |
 |  Bottom |Green| IO18 | Low |
 
+#### V2+
+| Postion | Color | GPIO | On when|
+|:-----------------------------|:----:|:--:|:--:
+|  Top |Red| IO40 | High |
+|  Bottom |RGB| IO39 | Neopixel |
+
 ### Other Pins
-| Function |  GPIO | Notes|
+| Function |  GPIO V1 |GPIO V2+ | Notes|
+|:-----------------------------|:----:|:----:|:--|
+|  I²C SDA |21|17||
+|  I²C SCL |22|18 ||
+|  Serial TX |1|43 ||
+|  Serial RX |3|44 ||
+|  IO pin |2|1 |When used for capacitative sensing, refer to T2|
+| DblTap |n/a|2|
+
+### Expansion port (V2+ only)
+| SPI |  GPIO | MMC | 
 |:-----------------------------|:----:|:--|
-|  I²C SDA |21| |
-|  I²C SCL |22| |
-|  Serial TX |1| |
-|  Serial RX |3| |
-|  IO pin |2| When used for capacitative sensing, refer to T2|
-|  Reserved |32| For future use|
+|  MISO |38|DAT0|
+|  MOSI |37|CMD |
+|  SCK  |36|CLK |
+|  X1   |35|DAT3 |
+|  X2   |34|DAT1 |
+|  X3   |33|DAT2 |
 
 ## Troubleshooting
 - If you try to upload code and getting this message ```A fatal error occurred: Timed out waiting for packet content``` or ```A fatal error occurred: Invalid head of packet (0xE0)```, change the transfer speed to 460800 pbs.
