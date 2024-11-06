@@ -4,6 +4,7 @@
 This is the default core used in the Domino4 eco-system.
 
 ## Main ChipSet
+<img src="assets/CWA_v1_v2.jpg" width=200>
 The core is built around the ESP32 series from Espressif:
 - Version 1: Uses the standard ESP32 [ESP32-WROOM-32](https://www.espressif.com/sites/default/files/documentation/esp32-wroom-32_datasheet_en.pdf)
 - Version 2+: Uses the ESP32-S3 [ESP32-S3(FN8)](https://www.espressif.com/sites/default/files/documentation/esp32-s3_datasheet_en.pdf)
