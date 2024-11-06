@@ -8,7 +8,7 @@ This is the default core used in the Domino4 eco-system.
 <th>Version 1</th><th>Version 2+</th>
 </tr>
 <tr style="background-color:#000;">
-<td><img src="assets/CWA_v1.png" width=200 ></td><td><img src="assets/CWA_v2.png" width=200></td>
+<td><img src="assets/CWA_v1.png" width=300 ></td><td><img src="assets/CWA_v2.png" width=300></td>
 </tr>
 <tr style="text-align: center">
 <td><a href=https://www.espressif.com/sites/default/files/documentation/esp32-wroom-32_datasheet_en.pdf>ESP32-WROOM-32</a></td><td><a href=https://www.espressif.com/sites/default/files/documentation/esp32-s3_datasheet_en.pdf>ESP32-S3(FN8)</a></td>
