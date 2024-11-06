@@ -1,30 +1,48 @@
 <img src="assets/CWA.svg" width=200 align="right">
 
+
 # CWA Core WiFi Standard
 This is the default core used in the Domino4 eco-system.
+<table>
+<tr style="background-color:#f47521;color:#ffffff;">
+<th>Version 1</th><th>Version 2+</th>
+</tr>
+<tr style="background-color:#000;">
+<td><img src="assets/CWA_v1.png" width=200 ></td><td><img src="assets/CWA_v2.png" width=200></td>
+</tr>
+<tr style="text-align: center">
+<td><a href=https://www.espressif.com/sites/default/files/documentation/esp32-wroom-32_datasheet_en.pdf>ESP32-WROOM-32</a></td><td><a href=https://www.espressif.com/sites/default/files/documentation/esp32-s3_datasheet_en.pdf>ESP32-S3(FN8)</a></td>
+</tr>
+</table>
 
-## Main ChipSet
-<img src="assets/CWA_v1_v2.jpg" width=200>
-The core is built around the ESP32 series from Espressif:
-- Version 1: Uses the standard ESP32 [ESP32-WROOM-32](https://www.espressif.com/sites/default/files/documentation/esp32-wroom-32_datasheet_en.pdf)
-- Version 2+: Uses the ESP32-S3 [ESP32-S3(FN8)](https://www.espressif.com/sites/default/files/documentation/esp32-s3_datasheet_en.pdf)
+## Programming in Arduino
+To program the Domino4 cores using Arduino, install the board files using the doumentation from [Espressif](https://github.com/espressif/arduino-esp32)
 
-## Programming
+### Connection:
+| Version | 1 | 2+ |
+|-----------------------------:|:----:|:--:|
+|Connection:|PPU V1|USB-C (preferred) or PPU V2|
 
-### Programming in Arduino
+### Settings:
+| Version | 1 |   2+ |  
+|-----------------------------:|:----:|:--:|
+|Board: |'ESP32 Dev Module'|'ESP32S3 Dev Module'
+|Flash Size:|4MB|8MB|
+#### Using PPU
+| Version | 1 |   2+ |  
+|-----------------------------:|:----:|:--:|
+|Speed:| Max 460800 bps|Max 460800 bps|
+| USB CDC on Boot: |n/a| Disabled|
+|Port:|Chose the port where your PPU (v1) is inserted.|Chose the port where your PPU (v2) is inserted.|
 
-#### Version 1:
-- To program the Domino4 cores using Arduino, install the board files using the doumentation from [Espressif](https://github.com/espressif/arduino-esp32)
-- Please read the notes regarding upload/transfer speed when using the [PPU](https://github.com/domino4com/PPU).
-- Settings:
-  - **Board:** Choose the ```ESP32 Dev Module```
-  - **Speed:** Max 460800 bps
-  - **Port:** Chose the port where your PPU is inserted. If you cannot see the port, the check out your [PPU installation](https://github.com/domino4com/PPU)
-
-### Programming in Python.
-- Download the MicroPython firmware from [micropython.org](https://micropython.org/download/esp32/)
-- It is recommended to download and use the (Mu Editor)(https://codewith.mu/en/download)
-- You can use the Mu Editor to upload the MicroPython Firmware.
+Please read the notes regarding upload/transfer speed when using the [PPU](https://github.com/domino4com/PPU).
+If you cannot see the port, the check out your [PPU installation](https://github.com/domino4com/PPU)
+#### Using USB-C
+| Version | 1 |   2+ |  
+|-----------------------------:|:----:|:--:|
+|Speed:| n/a|inconsequential|
+|USB CDC on Boot: |n/a| Enabled|
+|Port:|n/a| Chose the USB-C port where your CWA is inserted.|
 
 ## Pin Usage
 ### Buttons 
@@ -41,8 +59,16 @@ The core is built around the ESP32 series from Espressif:
 #### Push Buttons - V2+
 | Symbol | GPIO | Function |
 |:-----------------------------:|:----:|:--:|
-| :arrow_forward:                 | IO0 | Program |
-| :arrows_counterclockwise:               | n/a | Reset |
+| &#x25B6;                 | IO0 | Program |
+| &#x21BB;              | n/a | Reset |
+
+#### The V2+ buttons have special usage: 
+- Instead of power cycle your circuit in order to restart your program, you can click the &#x21BB; button.
+- By holding down &#x25B6; and clicking &#x21BB;, you can force the ESP32S3 into PROGRAM mode. If you feel you have any issues programming the core, then try this. The <font color="#f00">&#x2600;</font> will illuminate permanently. You have to manually reset the core once programmed, by clicking &#x21BB;.
+- You can install a UF2 Bootloaded by visiting https://apps.maxiq.space
+- If you use the UF2 Bootloaded to install a UF2 prepared application, then double-click on &#x21BB;.   The <font color="#f00">&#x2600;</font> will pulse.
+- The CWA V2+ core comes preloaded with the UF2 bootloader. If you program the core using Arduino, you will overwrite the bootloaded. Simply follow the instructions on https://apps.maxiq.space to re-install the bootloader.
+
 
 ### LEDs
 #### V1
@@ -79,6 +105,12 @@ The core is built around the ESP32 series from Espressif:
 |  X1   |35|DAT3 |
 |  X2   |34|DAT1 |
 |  X3   |33|DAT2 |
+
+
+## Programming in Python.
+- Download the MicroPython firmware from [micropython.org](https://micropython.org/download/esp32/)
+- It is recommended to download and use the (Mu Editor)(https://codewith.mu/en/download)
+- You can use the Mu Editor to upload the MicroPython Firmware.
 
 ## Troubleshooting
 - If you try to upload code and getting this message ```A fatal error occurred: Timed out waiting for packet content``` or ```A fatal error occurred: Invalid head of packet (0xE0)```, change the transfer speed to 460800 pbs.
