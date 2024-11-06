@@ -4,11 +4,15 @@
 This is the default core used in the Domino4 eco-system.
 
 ## Main ChipSet
-The core is built around the [ESP32-WROOM-32](https://www.espressif.com/sites/default/files/documentation/esp32-wroom-32_datasheet_en.pdf) module from Espressif. Future versions of this core will be using newer version of the ESP32 chipset.
+The core is built around the ESP32 series from Espressif:
+- Version 1: Uses the standard ESP32 [ESP32-WROOM-32](https://www.espressif.com/sites/default/files/documentation/esp32-wroom-32_datasheet_en.pdf)
+- Version 2+: Uses the ESP32-S3 [ESP32-S3(FN8)](https://www.espressif.com/sites/default/files/documentation/esp32-s3_datasheet_en.pdf)
 
 ## Programming
 
 ### Programming in Arduino
+
+#### Version 1:
 - To program the Domino4 cores using Arduino, install the board files using the doumentation from [Espressif](https://github.com/espressif/arduino-esp32)
 - Please read the notes regarding upload/transfer speed when using the [PPU](https://github.com/domino4com/PPU).
 - Settings:
